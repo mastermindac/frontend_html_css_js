@@ -9,6 +9,34 @@
     <link rel="stylesheet" href="./css/estilos.css">
 </head>
 <body>
-    
+    <!-- CABECERA -->
+    <header>
+        <img src="./img/logo.png" alt="Logo MasterDots">
+    </header>
+    <!-- FORMULARIO USUARIO -->
+    <main>
+        <form action="#">
+            <div class="itemform">
+                <label for="nick">introduce tu nick</label>
+                <input type="text" name="nick" id="nick">
+            </div>
+            <div class="itemform">
+                <label for="tamano">tamaño del juego</label>
+                <select name="tamano" id="tamano">
+                    <option value="">--Por favor elige un tamaño--</option>
+                    <option value="1">4x4</option>
+                    <option value="2">5x5</option>
+                    <option value="3">6x6</option>
+                </select>
+            </div>
+            <div class="itemform">
+                <input type="submit" value="JUGAR">
+              </div>
+        </form>
+    </main>
+    <!-- PIE DE PAGINA -->
+    <footer>
+        <p>Curso FrontEnd HTML, CSS y JS</p>
+    </footer>
 </body>
 </html>
