@@ -1,0 +1,39 @@
+body{
+    background-color: #BF343F;
+    font-family: 'Noto Sans', sans-serif;
+}
+header,footer{
+    text-align: center;
+    width: 400px;
+    margin: 30px auto 0px auto;
+    font-weight: 200;
+}
+main{
+    background-color: #D1D0D9;
+    width: 400px;
+    margin: 15px auto 0px auto;
+    padding: 15px;
+    border-radius: 10px;
+}
+form{
+    display:flex;
+    flex-direction: column;
+}
+label{
+    display: block;
+}
+input, select{
+    width:100%;
+    border-radius: 5px;
+    border: 1px solid #89888C;
+    font-family: 'Noto Sans', sans-serif;
+    padding: 5px;
+}
+input[type="submit"]{
+    background-color: #D90404;
+    color: white;
+}
+/*Seleccion de clases*/
+.itemform{
+    margin-top: 10px;
+}
