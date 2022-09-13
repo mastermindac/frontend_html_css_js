@@ -32,6 +32,13 @@ input{
     font-size:18px;
 
 }
+input[type="email"]{
+    border: 1px solid #ced4da;
+    font-weight: 200;
+    font-size:18px;
+    border-radius: 5px;
+    width: 278px;
+}
 input[type="submit"]{
     background-color: #fd0c49;
     color: #fff;
