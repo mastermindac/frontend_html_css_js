@@ -14,3 +14,9 @@ main{
 form{
     font-size: 18px;
 }
+input{
+    font-family: 'Poppins',sans-serif;
+}
+select{
+    font-family: 'Poppins',sans-serif;
+}
