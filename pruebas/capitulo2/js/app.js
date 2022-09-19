@@ -15,11 +15,12 @@ const error=document.getElementById("error");
 //Funciones de evento
 function comprobarForm(event){
     //Comprobar cambios
-    if(nombre.value.length==0)
+    //Comprobar cambios
+    if(nombre.value.match(/(?<!\S)[0-9]/))
     {
-        nombre.focus();
+        nickInput.focus();
         event.preventDefault();
-        error.innerText="El campo de nick está vacío";
+        error.innerText="El campo de nombre no puede comenzar con un numero";
         return false;
     }else if(email.value.length==0){
         email.focus();
