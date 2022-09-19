@@ -9,6 +9,13 @@ const tamanoInput=document.getElementById("tamano");
 const formEntrada=document.getElementById("formEntrada");
 const error=document.getElementById("error");
 
+//Comprobar si hay algún error de juego.html
+if(sessionStorage.getItem('error')!=null)
+{
+    error.innerText=sessionStorage.getItem('error');
+    sessionStorage.removeItem('error');
+}
+
 //Funciones de evento
 function comprobarForm(event){
     //Comprobar cambios

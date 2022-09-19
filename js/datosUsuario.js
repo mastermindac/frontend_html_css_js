@@ -2,18 +2,21 @@
 * JS Para la gestión de los datos de usuario
 *
 */
+var nick;
 
 function datosUsuario(nick){
 
     sessionStorage.setItem('nick',nick.value);
-    //A borrar en otros vídeos
-    localStorage.setItem('nick',nick.value);
 }
 
-function mostrarDatosUsuario(){
-    let nick = sessionStorage.getItem('nick');
+function getDatosUsuario(){
+    nick = sessionStorage.getItem('nick');
     console.log(nick);
-    //A borrar en otros vídeos
-    let nickLocal = localStorage.getItem('nick');
-    console.log(nick);
+}
+function comprobacionDatosUsuario(){
+    if(nick==null){
+        sessionStorage.setItem('error','No se ha rellenado correctamente el formulario');
+        return false;
+    }
+    return true;
 }
