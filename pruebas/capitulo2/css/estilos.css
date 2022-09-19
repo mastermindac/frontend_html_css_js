@@ -33,6 +33,11 @@ input[type="submit"]{
     background-color: #D90404;
     color: white;
 }
+p{
+    color:#fd0c49;
+    font-weight: 400;
+    font-size: 14px;
+}
 /*Seleccion de clases*/
 .itemform{
     margin-top: 10px;
