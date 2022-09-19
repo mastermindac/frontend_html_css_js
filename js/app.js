@@ -33,6 +33,7 @@ function comprobarForm(event){
     }
     //Informacion es correcta
     datosUsuario(nickInput);
+    historicoUsuarios(nickInput);
     return true;
 }
 
