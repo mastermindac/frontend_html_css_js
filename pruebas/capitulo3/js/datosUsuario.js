@@ -25,10 +25,29 @@ var errorValue;
  */
 function datosUsuario(nombre, edad, email,serie1,serie2,serie3) {
     sessionStorage.setItem('nombre',nombre.value);
-    sessionStorage.setItem('edad',edad.value);
+    sessionStorage.setItem('edad',edad.options[edad.selectedIndex].text);
     sessionStorage.setItem('email',email.value);
-    sessionStorage.setItem('serie1',serie1.value);
-    sessionStorage.setItem('serie2',serie2.value);
-    sessionStorage.setItem('serie3',serie3.value);
+    sessionStorage.setItem('serie1',serie1.options[serie1.selectedIndex].text);
+    sessionStorage.setItem('serie2',serie2.options[serie2.selectedIndex].text);
+    sessionStorage.setItem('serie3',serie3.options[serie3.selectedIndex].text);
 }
 
+function getDatosUsuario() {
+    nombreValue=sessionStorage.getItem('nombre');
+    edadValue=sessionStorage.getItem('edad');
+    emailValue=sessionStorage.getItem('email');
+    serie1Value=sessionStorage.getItem('serie1');
+    serie2Value=sessionStorage.getItem('serie2');
+    serie3Value=sessionStorage.getItem('serie3');
+}
+
+/**
+ * Comprueba si existe nick en el sessionStorage
+ */
+ function comprobacionDatosUsuario(){
+    if(nick==null){
+        sessionStorage.setItem('error','No se ha rellenado correctamente el formulario');
+        return false;
+    }
+    return true;
+}
