@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Jugadores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;400&family=Poppins:wght@100;200;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+    <!-- CABECERA CON LOGO DEL FORMULARIO -->
+    <header>
+        <img src="./img/logo_50.png" alt="Imagen del logo de formulario">
+    </header>
+    <main>
+        <article>
+            <div>
+                <p id="error"></p>
+            </div>
+            <form action="#"  id="formEntrada">
+                    <div class="itemform">
+                        <label for="nombre">nombre</label>
+                        <input type="text" name="nombre" id="nombre" required minlength="2">
+                    </div>
+                    <div class="itemform">
+                        <label for="email">email</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div class="itemform">
+                        <label for="edad">edad</label>
+                        <select name="edad" id="edad">
+                            <option value="0">--Por favor elige tu rango de edad--</option>
+                            <option value="1">18-20</option>
+                            <option value="2">20-25</option>
+                            <option value="3">25-30</option>
+                            <option value="4">30-35</option>
+                            <option value="5">35-45</option>
+                            <option value="6">45-55</option>
+                            <option value="7">55-70</option>
+                            <option value="8">>70</option>
+                        </select>
+                    </div>
+                    <div class="itemform">
+                        <label for="serie1">Elección serie 1</label>
+                        <select name="serie1" id="serie1">
+                            <option value="0">--Por favor elige tu serie davorita--</option>
+                            <option value="1">Juego de tronos</option>
+                            <option value="2">Mr Robot</option>
+                            <option value="3">Suits</option>
+                            <option value="4">El cuento de la criada</option>
+                            <option value="5">Devs</option>
+                        </select>
+                    </div>
+                    <div class="itemform">
+                        <label for="serie2">Elección serie 2</label>
+                        <select name="serie2" id="serie2">
+                            <option value="0">--Por favor elige tu serie davorita--</option>
+                            <option value="1">Juego de tronos</option>
+                            <option value="2">Mr Robot</option>
+                            <option value="3">Suits</option>
+                            <option value="4">El cuento de la criada</option>
+                            <option value="5">Devs</option>
+                        </select>
+                    </div>
+                    <div class="itemform">
+                        <label for="serie3">Elección serie 3</label>
+                        <select name="serie3" id="serie3">
+                            <option value="0">--Por favor elige tu serie davorita--</option>
+                            <option value="1">Juego de tronos</option>
+                            <option value="2">Mr Robot</option>
+                            <option value="3">Suits</option>
+                            <option value="4">El cuento de la criada</option>
+                            <option value="5">Devs</option>
+                        </select>
+                    </div>
+                    <div class="itemform">
+                        <input type="submit" value="ENVIAR">
+                    </div>
+            </form>
+        </article>
+    </main>
+    <footer>
+        <div>Formulario Datos Jugador Gamer</div>
+    </footer>
+    <!-- EL CODIGO JS-->
+    <script src="./js/app.js"></script>
+</body>
+</html>
