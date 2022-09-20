@@ -1,5 +1,5 @@
 body{
-    background-color: #F2E5BD;
+    background-color: #F2D5BB;
     font-family: 'Noto Sans', sans-serif;
 }
 header,footer{
@@ -9,7 +9,7 @@ header,footer{
     font-weight: 200;
 }
 main{
-    background-color: #D1D0D9;
+    background-color: #D9BB96;
     width: 400px;
     margin: 15px auto 0px auto;
     padding: 15px;
@@ -30,7 +30,7 @@ input, select{
     padding: 5px;
 }
 input[type="submit"]{
-    background-color: #D90404;
+    background-color: #260B05;
     color: white;
 }
 p{

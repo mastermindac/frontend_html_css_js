@@ -1,23 +1,25 @@
 /*
 * JS Para la comprobación de datos del Formulario de entrada
 *
+* @author Paco Gomez <paco@mastermind.ac>
+* @link https://github.com/mastermindac/frontend_html_css_js GitHub
 */
 
 //Inicializacion de var,objetos, DOM
-const nickInput=document.getElementById("nick");
-const tamanoInput=document.getElementById("tamano");
-const emailInput=document.getElementById("email");
-const formEntrada=document.getElementById("formEntrada");
-const error=document.getElementById("error");
-
-//Comprobar si hay algún error de juego.html
-if(sessionStorage.getItem('error')!=null)
-{
-    error.innerText=sessionStorage.getItem('error');
-    sessionStorage.removeItem('error');
-}
+var nickInput;
+var tamanoInput;
+var emailInput;
+var formEntrada;
+var error;
+var avatarItems;
+var itemImg;
+var avatarCont;
 
 //Funciones de evento
+/**
+ * Comprueba los datos correctos del formualrio de entrada
+ * @param  {EventObject} event Evento que salta al realizar submit
+ */
 function comprobarForm(event){
     //Comprobar cambios
     if(nickInput.value.match(/(?<!\S)[0-9]/))
@@ -37,8 +39,46 @@ function comprobarForm(event){
     historicoUsuarios(nickInput);
     return true;
 }
+function moviendoImg(event){
+    itemImg=event.target;
+    console.log(itemImg.src);
+}
+function cambiarImg(event){
+    avatarCont.src=itemImg.src;
+}
+/**
+ * Carga de objetos del DOM comprobaciones y eventos del formulario
+ */
+function domCargado(){
+    //Captura de todos los Elements
+    nickInput=document.getElementById("nick");
+    tamanoInput=document.getElementById("tamano");
+    emailInput=document.getElementById("email");
+    formEntrada=document.getElementById("formEntrada");
+    error=document.getElementById("error");
+
+    //Comprobar si hay algún error de juego.html
+    if(sessionStorage.getItem('error')!=null)
+    {
+        error.innerText=sessionStorage.getItem('error');
+        sessionStorage.removeItem('error');
+    }
+
+    formEntrada.addEventListener('submit',comprobarForm);
+
+    
+    //Eventos del D&D
+    avatarItems=document.getElementsByClassName("avatarImgItem");
+    for(let item of avatarItems){
+        item.addEventListener('dragstart',moviendoImg)
+    }
+    avatarCont=document.getElementById("avatarImg");
+    avatarCont.addEventListener('dragover',e=>{e.preventDefault()})
+    avatarCont.addEventListener('drop',cambiarImg)
+}
+
 
 //Inicio de carga de eventos
-formEntrada.addEventListener('submit',comprobarForm);
+document.addEventListener('DOMContentLoaded',domCargado);
 //Geolocalizacion
 datoGeolocalizacion();
