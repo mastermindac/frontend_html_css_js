@@ -35,7 +35,7 @@ function comprobarForm(event){
         return false;
     }
     //Informacion es correcta
-    datosUsuario(nickInput,tamanoInput,emailInput);
+    datosUsuario(nickInput,tamanoInput,emailInput,avatarCont);
     historicoUsuarios(nombre, serie1,serie2,serie3);
     return true;
 }
