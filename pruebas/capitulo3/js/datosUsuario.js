@@ -11,6 +11,7 @@ var serie1Value;
 var serie2Value;
 var serie3Value;
 var errorValue;
+var geolocalizacionTxt;
 
 //sessionStorage
 
@@ -30,6 +31,7 @@ function datosUsuario(nombre, edad, email,serie1,serie2,serie3) {
     sessionStorage.setItem('serie1',serie1.options[serie1.selectedIndex].text);
     sessionStorage.setItem('serie2',serie2.options[serie2.selectedIndex].text);
     sessionStorage.setItem('serie3',serie3.options[serie3.selectedIndex].text);
+    sessionStorage.setItem('geolocalizacionTxt',geolocalizacionTxt);
 }
 
 function getDatosUsuario() {
@@ -70,4 +72,20 @@ function historicoUsuarios(nombre, serie1,serie2,serie3){
         return false;
     }
     return true;
+}
+
+/**
+ * Calcula la geolocalizacion del usuario y la almacena en geolocalizacionTxt
+ */
+ function datoGeolocalizacion(){
+    if(!navigator.geolocation){
+        geolocalizacionTxt="El navegador no es compatible con API Geolocation";
+    }else{
+        navigator.geolocation.getCurrentPosition(
+            //Exito
+            (position)=>{geolocalizacionTxt='Latitud:'+position.coords.latitude+',longitud:'+position.coords.longitude},
+            //Error
+            ()=>{geolocalizacionTxt="La geolocalizacion no se ha podido realizar";}
+        )
+    }
 }

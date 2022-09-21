@@ -4,13 +4,13 @@
 */
 
 //Inicializacion de var,objetos, DOM
-const nombre=document.getElementById("nombre");
-const email=document.getElementById("email");
-const edad=document.getElementById("edad");
-const serie1=document.getElementById("serie1");
-const serie2=document.getElementById("serie2");
-const serie3=document.getElementById("serie3");
-const error=document.getElementById("error");
+var nombre;
+var emailInput;
+var edad;
+var serie1;
+var serie2;
+var serie3;
+var error;
 
 //Funciones de evento
 function comprobarForm(event){
@@ -53,5 +53,32 @@ function comprobarForm(event){
 }
 
 
+/**
+ * Carga de objetos del DOM comprobaciones y eventos del formulario
+ */
+ function domCargado(){
+    //Captura de todos los Elements
+    nombre=document.getElementById("nombre");
+    email=document.getElementById("email");
+    edad=document.getElementById("edad");
+    serie1=document.getElementById("serie1");
+    serie2=document.getElementById("serie2");
+    serie3=document.getElementById("serie3");
+    error=document.getElementById("error");
+
+    //Comprobar si hay algún error de juego.html
+    if(sessionStorage.getItem('error')!=null)
+    {
+        error.innerText=sessionStorage.getItem('error');
+        sessionStorage.removeItem('error');
+    }
+
+    //Inicio de carga de eventos
+    formEntrada.addEventListener('submit',comprobarForm);
+
+}
+
 //Inicio de carga de eventos
-formEntrada.addEventListener('submit',comprobarForm);
+document.addEventListener('DOMContentLoaded',domCargado);
+//Geolocalizacion
+datoGeolocalizacion();
