@@ -3,6 +3,7 @@
 *
 */
 
+/* INICIALIZACIÓN DEL PANEL */
 /**
  * Devuelve un numero random entre 0 y max
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
@@ -20,6 +21,12 @@ function rellenarFormularioUsuario(){
     document.getElementById("avatarImg").src=avatarImg;
 }
 
+/**
+ * Funcion que:
+ *  1.- Rellena el nick
+ *  2.- Rellena el avatar
+ *  3.- Pinta de forma automática el panel de juego
+ */
 function pintarPanelJuego(){
     document.getElementById("juego").style.gridTemplateColumns="repeat("+tamano+", 1fr)"
     document.getElementById("juego").style.gridTemplateRows="repeat("+tamano+", 1fr)"
@@ -34,13 +41,36 @@ function pintarPanelJuego(){
     document.getElementById("juego").innerHTML=items;
 }
 
+/**
+ * Añadir los eventos al juego
+ */
+function programarEventosJuego(){
+    const items=document.getElementsByClassName('item');
+    for (let item of items) {
+        item.addEventListener('mousedown',comenzarMarcar);
+    }
+}
+
+/* FUNCIONES DEL JUEGO */
+/**
+ * Iniciar el marcado de los dots
+ * @param  {} event
+ */
+function comenzarMarcar(event){
+    let item=event.target;
+    let containerItem=event.target.parentElement;
+    if(item.classList.contains('rojo')) containerItem.classList.add('rojo');
+    else containerItem.classList.add('verde');
+    console.log("Pinchado sobre un circulo");
+}
 
 //Capturamos Datos Usuaio
 getDatosUsuario();
 //Comprobamos los datos
 if(!comprobacionDatosUsuario()) location="index.html";
-//Rellenamos el formulario
+//Rellenamos el formulario, panel y eventos
 rellenarFormularioUsuario();
 pintarPanelJuego();
+programarEventosJuego();
 
 
