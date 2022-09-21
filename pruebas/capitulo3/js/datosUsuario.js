@@ -41,11 +41,31 @@ function getDatosUsuario() {
     serie3Value=sessionStorage.getItem('serie3');
 }
 
+//localStorage
+function historicoUsuarios(nombre, serie1,serie2,serie3){
+    let seleccionesStorage=localStorage.getItem('selecciones');
+    let selecciones;
+    if(historicoStorage==null){
+        selecciones=[];
+    }else{
+        selecciones=JSON.parse(seleccionesStorage);
+    }
+    let registroUsuario={
+        usuario:nick.value,
+        serie1:serie1.value,
+        serie2:serie2.value,
+        serie3:serie3.value,
+        fecha:Date.now()
+    }
+    selecciones.push(registroUsuario);
+    localStorage.setItem('selecciones',JSON.stringify(selecciones));
+}
+
 /**
  * Comprueba si existe nick en el sessionStorage
  */
  function comprobacionDatosUsuario(){
-    if(nick==null){
+    if(nombreValue==null){
         sessionStorage.setItem('error','No se ha rellenado correctamente el formulario');
         return false;
     }

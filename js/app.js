@@ -36,7 +36,7 @@ function comprobarForm(event){
     }
     //Informacion es correcta
     datosUsuario(nickInput,tamanoInput,emailInput);
-    historicoUsuarios(nickInput);
+    historicoUsuarios(nombre, serie1,serie2,serie3);
     return true;
 }
 function moviendoImg(event){
