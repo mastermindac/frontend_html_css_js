@@ -2,7 +2,8 @@
     function moviendoFruta(event){
         frutaTxt=event.target.innerText;
     }
-    function cuentaletras(event){
+    function contarletras(event){
+        console.log(frutaTxt);
         event.target.innerText=frutaTxt.length;
     }
     //Eventos del D&D
@@ -12,4 +13,4 @@
     }
     cuentaletras=document.getElementById("cuentaLetras");
     cuentaletras.addEventListener('dragover',e=>{e.preventDefault()})
-    cuentaletras.addEventListener('drop',cuentaletras)
+    cuentaletras.addEventListener('drop',contarletras)

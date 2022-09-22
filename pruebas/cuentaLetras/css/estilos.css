@@ -34,9 +34,9 @@ input[type="submit"]{
     color: white;
 }
 p{
-    color:#fd0c49;
+    color: white;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 24px;
 }
 /*Seleccion de clases*/
 .itemform{
@@ -53,4 +53,7 @@ p{
     min-height: 50px;
     margin-top: 10px;
     background-color:#89888C;
+}
+#contCuentaLetras{
+    text-align: center;
 }
