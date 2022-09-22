@@ -42,3 +42,15 @@ p{
 .itemform{
     margin-top: 10px;
 }
+#listado,#cuentaLetras{
+    width: 400px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    background-color: #D9BB96;
+    margin-right: 10px;
+}
+#cuentaLetras{
+    min-height: 50px;
+    margin-top: 10px;
+    background-color:#89888C;
+}

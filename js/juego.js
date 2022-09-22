@@ -2,6 +2,8 @@
 * JS Para el juego Masterdots
 *
 */
+//VARIABLES GLOBALES
+var iniciadoMarcado=false;
 
 /* INICIALIZACIÓN DEL PANEL */
 /**
@@ -48,7 +50,9 @@ function programarEventosJuego(){
     const items=document.getElementsByClassName('item');
     for (let item of items) {
         item.addEventListener('mousedown',comenzarMarcar);
+        item.addEventListener('mouseover',continuarMarcando);
     }
+    document.addEventListener('mouseup',finalizarMarcado);
 }
 
 /* FUNCIONES DEL JUEGO */
@@ -61,8 +65,38 @@ function comenzarMarcar(event){
     let containerItem=event.target.parentElement;
     if(item.classList.contains('rojo')) containerItem.classList.add('rojo');
     else containerItem.classList.add('verde');
+    if(!iniciadoMarcado) iniciadoMarcado=true;
     console.log("Pinchado sobre un circulo");
 }
+
+/* FUNCIONES DEL JUEGO */
+/**
+ * Continuar el marcado de los dots
+ * @param  {} event
+ */
+ function continuarMarcando(event){
+    if(iniciadoMarcado){
+        let item=event.target;
+        let containerItem=event.target.parentElement;
+        if(item.classList.contains('rojo')) containerItem.classList.add('rojo');
+        else containerItem.classList.add('verde');
+    }
+    console.log("Pasando sobre un circulo");
+ }
+
+ /* FUNCIONES DEL JUEGO */
+/**
+ * Finalizaría el marcado de los dots
+ * @param  {} event
+ */
+ function finalizarMarcado(event){
+    iniciadoMarcado=false;
+    console.log("Finalizar el marcado");
+ }
+
+/*
+* MAIN
+*/
 
 //Capturamos Datos Usuaio
 getDatosUsuario();
