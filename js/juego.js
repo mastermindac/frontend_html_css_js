@@ -8,6 +8,7 @@ var adyacentes=[];
 var idMarcados=[];
 var classMarcada;
 var tamanoPanel;
+var idInterval;
 
 /* INICIALIZACIÓN DEL PANEL */
 /**
@@ -69,6 +70,28 @@ function calcularAdyacentes(idMarcado){
 }
 
 /**
+ * Funcion que realiza el conteo hacia atrás del juego
+ */
+function cuentaAtras(){
+    let tmpoRestante=parseInt(document.getElementById("tmpo").value)-1;
+    document.getElementById("tmpo").value=tmpoRestante;
+    if(tmpoRestante==0){
+        clearInterval(idInterval);
+        //Finalizar todos los eventos
+        const items=document.getElementsByClassName('item');
+        for (let item of items) {
+            item.removeEventListener('mousedown',comenzarMarcar);
+            item.removeEventListener('mouseover',continuarMarcando);
+        }
+        document.removeEventListener('mouseup',finalizarMarcado);
+        //Cambiar z-index paneles
+        document.getElementById("juegoAcabado").style.zIndex="2";
+        document.getElementById("juego").style.zIndex="1";
+        document.getElementById("nuevaPartida").addEventListener("click",(e)=>location.reload());
+    }
+}
+
+/**
  * Añadir los eventos al juego
  */
 function programarEventosJuego(){
@@ -78,6 +101,8 @@ function programarEventosJuego(){
         item.addEventListener('mouseover',continuarMarcando);
     }
     document.addEventListener('mouseup',finalizarMarcado);
+    //Cuenta atrás
+    idInterval=setInterval(cuentaAtras,1000)
 }
 
 /* FUNCIONES DEL JUEGO */
