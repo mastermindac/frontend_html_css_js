@@ -8,6 +8,7 @@ var adyacentes=[];
 var idMarcados=[];
 var classMarcada;
 var tamanoPanel;
+var tiempoJuego;
 var idInterval;
 
 /* INICIALIZACIÓN DEL PANEL */
@@ -27,6 +28,7 @@ function rellenarFormularioUsuario(){
     document.getElementById("nick").value=nick;
     document.getElementById("avatarImg").src=avatarImg;
     tamanoPanel=parseInt(tamano);
+    document.getElementById("tmpo").value=tiempo;
 }
 
 /**
@@ -153,6 +155,16 @@ function comenzarMarcar(event){
             //Guardo los marcados
             idMarcados.push(parseInt(item.id));
             calcularAdyacentes(parseInt(item.id));
+        }else{
+            iniciadoMarcado=false;
+            adyacentes=[];
+            //Desmarcar
+            for (let index = 0; index < idMarcados.length; index++) {
+                //Capturar el objeto
+                let itemMarcado=document.getElementById(idMarcados[index]);
+                itemMarcado.parentElement.classList.remove(classMarcada);
+            }
+            idMarcados=[];
         }
 
     }

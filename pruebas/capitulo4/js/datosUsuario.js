@@ -9,6 +9,7 @@ var tamano;
 var email;
 var geolocalizacionTxt;
 var avatarImg;
+var tiempo;
 
 //sessionStorage
 
@@ -18,12 +19,13 @@ var avatarImg;
  * @param  {HTMLElement} tamano tamaño del panel
  * @param  {HTMLElement} email email del usuario
  */
-function datosUsuario(nick, tamano, email,avatarCont) {
+function datosUsuario(nick, tamano, email,avatarCont,tiempo) {
     sessionStorage.setItem('nick',nick.value);
     sessionStorage.setItem('tamano',tamano.value);
     sessionStorage.setItem('email',email.value);
     sessionStorage.setItem('geolocalizacionTxt',geolocalizacionTxt);
     sessionStorage.setItem('avatarImg',avatarCont.src);
+    sessionStorage.setItem('tiempo',tiempo.value);
 }
 /**
  * Recoge los daots de la sesion del sessionStage
@@ -33,6 +35,7 @@ function getDatosUsuario(){
     tamano = sessionStorage.getItem('tamano');
     email = sessionStorage.getItem('email');
     avatarImg = sessionStorage.getItem('avatarImg');
+    tiempo = sessionStorage.getItem('tiempo');
 }
 
 /**

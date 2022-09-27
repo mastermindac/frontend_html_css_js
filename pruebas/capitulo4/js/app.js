@@ -9,6 +9,7 @@
 var nickInput;
 var tamanoInput;
 var emailInput;
+var tiempoInput;
 var formEntrada;
 var error;
 var avatarItems;
@@ -35,7 +36,7 @@ function comprobarForm(event){
         return false;
     }
     //Informacion es correcta
-    datosUsuario(nickInput,tamanoInput,emailInput,avatarCont);
+    datosUsuario(nickInput,tamanoInput,emailInput,avatarCont,tiempoInput);
     historicoUsuarios(nombre, serie1,serie2,serie3);
     return true;
 }
@@ -56,6 +57,7 @@ function domCargado(){
     emailInput=document.getElementById("email");
     formEntrada=document.getElementById("formEntrada");
     error=document.getElementById("error");
+    tiempoInput=document.getElementById("tiempo");
 
     //Comprobar si hay algún error de juego.html
     if(sessionStorage.getItem('error')!=null)
