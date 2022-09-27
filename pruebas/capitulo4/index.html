@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masterdots game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+    <!-- CABECERA -->
+    <header>
+        <img src="./img/logo.png" alt="Logo MasterDots">
+    </header>
+    <!-- FORMULARIO USUARIO -->
+    <main>
+        <div>
+            <p id="error"></p>
+        </div>
+        <form action="juego.html" id="formEntrada">
+            <div class="itemform">
+                <label for="nick">introduce tu nick*</label>
+                <input type="text" name="nick" value="@" id="nicka" readonly>
+                <input type="text" name="nick" id="nick" required minlength="2">
+            </div>
+            <div class="itemform">
+                <label for="email">correo electrónico</label>
+                <input type="email" id="email" value="yo@iam.es">
+            </div>
+            <div class="itemform">
+                <label for="tamano">tamaño del juego*</label>
+                <select name="tamano" id="tamano" required>
+                    <option value="0">--Por favor elige un tamaño--</option>
+                    <option value="4">4x4</option>
+                    <option value="5">5x5</option>
+                    <option value="6">6x6</option>
+                </select>
+            </div>
+            <div class="itemform">
+                <div id="avatar">
+                    <label for="avatar">avatar</label>
+                    <div id="avatarContainer">
+                        <img src="./img/avatar1.png" alt="" id="avatarImg">
+                    </div>
+                </div>
+                <div id="avatargrid">
+                    <div class="avatarItem">
+                        <img src="./img/avatar1.png" class="avatarImgItem" alt="" width="35" draggable="true">
+                    </div>
+                    <div class="avatarItem">
+                        <img src="./img/avatar2.png" class="avatarImgItem" alt="" width="35" draggable="true">
+                    </div>
+                    <div class="avatarItem">
+                        <img src="./img/avatar3.png" class="avatarImgItem" alt="" width="35" draggable="true">
+                    </div>
+                    <div class="avatarItem">
+                        <img src="./img/avatar4.png" class="avatarImgItem" alt="" width="35" draggable="true">
+                    </div>
+                    <div class="avatarItem">
+                        <img src="./img/avatar5.png" class="avatarImgItem" alt="" width="35" draggable="true">
+                    </div>
+                    <div class="avatarItem">
+                        <img src="./img/avatar6.png" class="avatarImgItem" alt="" width="35" draggable="true">
+                    </div>
+                </div>
+            </div>
+            <div class="itemform">
+                <p>* Obligatorio</p>
+            </div>
+            <div class="itemform">
+                <input type="submit" value="JUGAR" id="jugar">
+            </div>
+        </form>
+    </main>
+    <!-- PIE DE PAGINA -->
+    <footer>
+        <p>Curso FrontEnd HTML, CSS y JS</p>
+    </footer>
+    <!-- EL CODIGO JS-->
+    <script src="./js/datosUsuario.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>

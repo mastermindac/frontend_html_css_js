@@ -40,10 +40,10 @@ function pintarPanelJuego(){
     document.getElementById("juego").style.gridTemplateRows="repeat("+tamano+", 1fr)"
     //Elementos de forma automatica
     let items="";
-    let color=["rojo","verde"];
+    let color=["rojo","verde","azul"];
     let colorRnd=0;
     for (let index = 0; index < (parseInt(tamano)*parseInt(tamano)); index++) {
-        if(index%2>0) colorRnd=getRandomInt(2);
+        if(index%2>0) colorRnd=getRandomInt(3);
         items+=`<div class="containerItem"><div id="${index}" class="item ${color[colorRnd]}"></div></div>`;
     }
     document.getElementById("juego").innerHTML=items;
@@ -118,9 +118,12 @@ function comenzarMarcar(event){
         classMarcada='rojo';
         containerItem.classList.add('rojo');
     }
-    else{
+    else if(item.classList.contains('verde')){
         classMarcada='verde';
         containerItem.classList.add('verde');
+    }else{
+        classMarcada='azul';
+        containerItem.classList.add('azul');        
     }
     if(!iniciadoMarcado) iniciadoMarcado=true;
 
@@ -145,7 +148,8 @@ function comenzarMarcar(event){
         {
             let containerItem=event.target.parentElement;
             if(item.classList.contains('rojo')) containerItem.classList.add('rojo');
-            else containerItem.classList.add('verde');
+            else if(item.classList.contains('verde')) containerItem.classList.add('verde');
+            else containerItem.classList.add('azul');
             //Guardo los marcados
             idMarcados.push(parseInt(item.id));
             calcularAdyacentes(parseInt(item.id));
@@ -174,8 +178,8 @@ function comenzarMarcar(event){
         let itemMarcado=document.getElementById(idMarcados[index]);
         itemMarcado.parentElement.classList.remove(classMarcada);
         //Cambiar el color de los objetos de forma rnd
-        let color=["rojo","verde"];
-        let colorRnd=getRandomInt(2);
+        let color=["rojo","verde","azul"];
+        let colorRnd=getRandomInt(3);
         itemMarcado.classList.remove(classMarcada);
         itemMarcado.classList.add(color[colorRnd]);
     }

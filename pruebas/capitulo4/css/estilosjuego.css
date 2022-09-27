@@ -89,6 +89,10 @@ img{
     background-color: #7ac943;
     transition: background-color 0.4s;
 }
+.azul{
+    background-color: #476cdc;
+    transition: background-color 0.4s;
+}
 #contenedorJuego{
     width: 500px;
     margin-right: 10px;
